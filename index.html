@@ -81,9 +81,41 @@
         .slick-dots li button:before {
             color: white;
 
+/* Código responsivo já dentro da tag style */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
 
-            
-       @keyframes typing {
+        .container {
+            text-align: center;
+        }
+
+        .txt-type {
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        .fas {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        /* Animations for typing and erasing */
+        .writing-animation {
+            animation: typing 1s steps(1) forwards;
+        }
+
+        .erasing-animation {
+            animation: erasing 0.5s steps(1) forwards;
+        }
+
+        @keyframes typing {
             0% { width: 0; }
             100% { width: 100%; }
         }
@@ -93,43 +125,53 @@
             100% { width: 0; }
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        /* Responsive styles using Media Queries */
+
+        /* For small devices like mobile phones */
+        @media (max-width: 600px) {
             .txt-type {
-                font-size: 1.5rem; /* Reduz o tamanho da fonte para dispositivos menores */
+                font-size: 1.5rem;
             }
 
             .fas {
-                font-size: 1.2rem; /* Ajusta o tamanho do ícone para mobile */
+                font-size: 1rem;
             }
 
             body {
-                height: auto; /* Permite que a altura seja maior em dispositivos móveis */
-                padding: 20px;
+                height: auto;
+                margin: 10px;
+                padding: 0;
+                display: block;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
             }
         }
 
-        /* Tablet Responsiveness */
-        @media (max-width: 1024px) and (min-width: 769px) {
+        /* For medium devices like tablets */
+        @media (max-width: 768px) {
             .txt-type {
-                font-size: 1.75rem; /* Ajuste para tablets */
+                font-size: 2rem;
             }
 
             .fas {
-                font-size: 1.4rem; /* Ajuste para tablets */
+                font-size: 1.2rem;
             }
         }
 
-        /* Desktop Responsiveness */
-        @media (min-width: 1025px) {
+        /* For large devices like desktops */
+        @media (min-width: 1024px) {
             .txt-type {
-                font-size: 2rem; /* Ajuste para telas maiores */
+                font-size: 3rem;
             }
 
             .fas {
-                font-size: 1.5rem; /* Ícone maior para desktop */
+                font-size: 1.8rem;
             }
         }
+
     </style>
 </head>
 <body>
