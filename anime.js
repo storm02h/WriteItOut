@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', init);
 // Init App
 function init() {
     const txtElement = document.querySelector('.txt-type');
-    const words = ["ao The Pirate's Daily!", ' ao meu cyberspace!'];
+    const words = [" ao The Pirate's Daily!", ' ao meu cyberspace!'];
     const wait = 2500;
 
     new TypeWriter(txtElement, words, wait);
