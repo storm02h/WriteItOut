@@ -171,19 +171,23 @@
                 font-size: 1.8rem;
             }
 
-            a.button {
-              display: inline-block;
-              padding: 10px 20px;
-              background-color: #007BFF; /* Cor de fundo azul */
-              color: white; /* Cor do texto branco */
-              text-decoration: none; /* Remover o sublinhado */
-              border-radius: 5px; /* Bordas arredondadas */
-              font-weight: bold;
+            /* Botão dentro do slider */
+            .gif-slider .button a {
+                padding: 10px 20px;
+                background-color: #007BFF; /* Cor de fundo azul */
+                color: white; /* Cor do texto branco */
+                text-decoration: none; /* Remover o sublinhado */
+                font-size: 1.2rem;
+                border-radius: 5px; /* Bordas arredondadas */
+                font-weight: bold;
+                display: inline-block;
+                margin-top: 20px;
+                transition: background-color 0.3s ease, color 0.3s ease;
             }
-            
-            a.button:hover {
-              background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
-}
+    
+            .gif-slider .button a:hover {
+                background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
+            }
 
         }
 
@@ -203,7 +207,7 @@
             <div><img src="https://i.gifer.com/NvI.gif"></div>
             <div><img src="https://64.media.tumblr.com/1e333bbaaef71a2a3980cb00ba68f71e/tumblr_ofh6ugN0yy1ve01pfo1_500.gifv"></div>
             <div><img src="https://64.media.tumblr.com/f705968f886ddb96b34d7275093a8b8e/tumblr_ofh6ugN0yy1ve01pfo3_500.gifv"></div>
-            <section class="button"><div class="button"><a href="articles.html">SIGA O COELHO BRANCO</a></div></section>
+            <div class="button"><a href="articles.html">SIGA O COELHO BRANCO</a></div>
         </div>
     </section>
     <!-- ===== Portfolio Section End =====-->
