@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4tr1X - Artigos e Portfolio</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Seu CSS personalizado -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        /* Container do artigo */
+        .articles-container {
+            width: 100%;
+            padding: 50px 20px;
+            background-color: #1e1e1e;
+        }
+
+        .article-card {
+            background-color: #2d2d2d;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-card:hover {
+            background-color: #3e3e3e;
+        }
+
+        .article-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .article-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .article-card .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff5500;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .article-card .read-more:hover {
+            background-color: #ff7a33;
+        }
+
+        /* Título da seção de artigos */
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        /* Slick Slider - Gif Section */
+        .portfolio {
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .gif-slider {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gif-slider .slick-slide {
+            height: 100vh;
+        }
+
+        .gif-slider img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .slick-prev, .slick-next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+        }
+
+        .slick-prev {
+            left: 20px;
+        }
+
+        .slick-next {
+            right: 20px;
+        }
+
+        .slick-prev:hover, .slick-next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .slick-dots {
+            bottom: 20px;
+        }
+
+        .slick-dots li button:before {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Slider de GIFs =====-->
+    <section class="portfolio">
+        <div class="section-title">
+            <h2>M4tr1X - GIFs e Portfolio</h2>
+        </div>
+        <div class="gif-slider">
+            <div><img src="https://i.makeagif.com/media/11-26-2015/JDXooC.gif" alt="GIF 3"></div>
+            <div><img src="https://andrewhungblog.wordpress.com/wp-content/uploads/2018/08/matrixrain.gif" alt="GIF 1"></div>
+            <div><img src="https://media.giphy.com/media/8Mv2gxjc00m6k/giphy.gif" alt="GIF 4"></div>
+            <div><img src="https://media.giphy.com/media/Y1wmknYyl4e8I/giphy.gif" alt="GIF 5"></div>
+            <div><img src="https://media.giphy.com/media/v2i1RRY0sWxa0/giphy.gif" alt="GIF 6"></div>
+        </div>
+    </section>
+    <!-- ===== Slider de GIFs Fim =====-->
+
+    <!-- ===== Artigos =====-->
+    <section class="articles-container">
+        <div class="section-title">
+            <h2>Últimos Artigos</h2>
+        </div>
+
+        <div class="article-card">
+            <h3>Como criar um Portfolio de Sucesso</h3>
+            <p>Descubra como montar um portfolio que se destaca no mercado e atrai mais clientes para o seu trabalho. Neste artigo, falamos sobre como escolher os melhores projetos para incluir, a importância do design e a estrutura ideal para uma apresentação profissional...</p>
+            <a href="#" class="read-more">Leia mais</a>
+        </div>
+
+        <div class="article-card">
+            <h3>O Futuro da Programação</h3>
+            <p>A tecnologia está evoluindo rapidamente, e o futuro da programação é cada vez mais dinâmico. Vamos explorar as tendências que estão moldando o desenvolvimento de software e como você pode se adaptar às novas mudanças do mercado...</p>
+            <a href="#" class="read-more">Leia mais</a>
+        </div>
+
+        <div class="article-card">
+            <h3>Como Utilizar Inteligência Artificial em Seu Projeto</h3>
+            <p>A inteligência artificial (IA) está se tornando uma ferramenta essencial para muitos desenvolvedores e empresas. Veja como integrar IA em seu projeto e as vantagens dessa tecnologia para melhorar a eficiência e a personalização...</p>
+            <a href="#" class="read-more">Leia mais</a>
+        </div>
+
+        <!-- Adicionar mais artigos -->
+    </section>
+    <!-- ===== Artigos Fim =====-->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Inicializando o slider de GIFs
+            $('.gif-slider').slick({
+                autoplaySpeed: 30000, // Intervalo de 3 segundos entre as trocas de GIFs
+                dots: true,        // Exibe os pontos de navegação abaixo
+                arrows: true,      // Exibe as setas de navegação
+            });
+        });
+    </script>
+
+</body>
+</html>
+
