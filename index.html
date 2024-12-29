@@ -80,7 +80,100 @@
 
         .slick-dots li button:before {
             color: white;
+
+
+            
+        /* Código responsivo já dentro da tag style */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
         }
+
+        .container {
+            text-align: center;
+        }
+
+        .txt-type {
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        .fas {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        /* Animations for typing and erasing */
+        .writing-animation {
+            animation: typing 1s steps(1) forwards;
+        }
+
+        .erasing-animation {
+            animation: erasing 0.5s steps(1) forwards;
+        }
+
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes erasing {
+            0% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        /* Responsive styles using Media Queries */
+
+        /* For small devices like mobile phones */
+        @media (max-width: 600px) {
+            .txt-type {
+                font-size: 1.5rem;
+            }
+
+            .fas {
+                font-size: 1rem;
+            }
+
+            body {
+                height: auto;
+                margin: 10px;
+                padding: 0;
+                display: block;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        /* For medium devices like tablets */
+        @media (max-width: 768px) {
+            .txt-type {
+                font-size: 2rem;
+            }
+
+            .fas {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* For large devices like desktops */
+        @media (min-width: 1024px) {
+            .txt-type {
+                font-size: 3rem;
+            }
+
+            .fas {
+                font-size: 1.8rem;
+            }
+        }
+   
     </style>
 </head>
 <body>
