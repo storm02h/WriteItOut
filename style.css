@@ -1,43 +1,170 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Responsivo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Fundo escuro */
+            color: #fff; /* Texto branco para contraste */
+        }
 
-.container {
-    text-align: center;
-}
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 1200px; /* Define uma largura máxima */
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-.txt-type {
-    display: inline-block;
-    font-size: 2rem;
-}
+        .txt-type {
+            display: inline-block;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid;
+        }
 
-.fas {
-    font-size: 1.5rem;
-    margin-left: 10px;
-}
+        .fas {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
 
-/* Writing animation */
-.writing-animation {
-    animation: typing 1s steps(1) forwards;
-}
+        /* Writing animation */
+        .writing-animation {
+            animation: typing 1s steps(1) forwards;
+        }
 
-/* Erasing animation */
-.erasing-animation {
-    animation: erasing 0.5s steps(1) forwards;
-}
+        /* Erasing animation */
+        .erasing-animation {
+            animation: erasing 0.5s steps(1) forwards;
+        }
 
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
 
-@keyframes erasing {
-    0% { width: 100%; }
-    100% { width: 0; }
-}
+        @keyframes erasing {
+            0% { width: 100%; }
+            100% { width: 0; }
+        }
 
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .txt-type {
+                font-size: 1.5rem; /* Reduz o tamanho da fonte para dispositivos menores */
+            }
+
+            .fas {
+                font-size: 1.2rem; /* Ajusta o tamanho do ícone para mobile */
+            }
+
+            body {
+                height: auto; /* Permite que a altura seja maior em dispositivos móveis */
+                padding: 20px;
+            }
+        }
+
+        /* Tablet Responsiveness */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .txt-type {
+                font-size: 1.75rem; /* Ajuste para tablets */
+            }
+
+            .fas {
+                font-size: 1.4rem; /* Ajuste para tablets */
+            }
+        }
+
+        /* Desktop Responsiveness */
+        @media (min-width: 1025px) {
+            .txt-type {
+                font-size: 2rem; /* Ajuste para telas maiores */
+            }
+
+            .fas {
+                font-size: 1.5rem; /* Ícone maior para desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="txt-type" id="typewriter"></div>
+        <i class="fas fa-pencil-alt"></i>
+    </div>
+
+    <script>
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.isDeleting = false;
+                this.type();
+            }
+
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                let typeSpeed = 150;
+
+                const typingElement = document.querySelector('.fas');
+
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if (this.isDeleting) {
+                    typingElement.className = "fas fa-pencil-alt erasing-animation";
+                } else {
+                    typingElement.className = "fas fa-pencil-alt writing-animation";
+                }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                    typingElement.className = "fas fa-pencil-alt";
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 1000;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            const txtElement = document.querySelector('.txt-type');
+            const words = ["Bem-vindo ao M4tr1X!", "Apenas uma demonstração de site responsivo.", "Está pronto para a revolução digital?"];
+            const wait = 3000;
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+
+</body>
+</html>
