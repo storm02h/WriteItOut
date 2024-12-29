@@ -83,41 +83,7 @@
 
 
             
-        /* Código responsivo já dentro da tag style */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #000;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        .txt-type {
-            display: inline-block;
-            font-size: 2rem;
-        }
-
-        .fas {
-            font-size: 1.5rem;
-            margin-left: 10px;
-        }
-
-        /* Animations for typing and erasing */
-        .writing-animation {
-            animation: typing 1s steps(1) forwards;
-        }
-
-        .erasing-animation {
-            animation: erasing 0.5s steps(1) forwards;
-        }
-
-        @keyframes typing {
+       @keyframes typing {
             0% { width: 0; }
             100% { width: 100%; }
         }
@@ -127,53 +93,43 @@
             100% { width: 0; }
         }
 
-        /* Responsive styles using Media Queries */
-
-        /* For small devices like mobile phones */
-        @media (max-width: 600px) {
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
             .txt-type {
-                font-size: 1.5rem;
+                font-size: 1.5rem; /* Reduz o tamanho da fonte para dispositivos menores */
             }
 
             .fas {
-                font-size: 1rem;
+                font-size: 1.2rem; /* Ajusta o tamanho do ícone para mobile */
             }
 
             body {
-                height: auto;
-                margin: 10px;
-                padding: 0;
-                display: block;
-            }
-
-            .container {
-                width: 100%;
-                margin: 0;
+                height: auto; /* Permite que a altura seja maior em dispositivos móveis */
+                padding: 20px;
             }
         }
 
-        /* For medium devices like tablets */
-        @media (max-width: 768px) {
+        /* Tablet Responsiveness */
+        @media (max-width: 1024px) and (min-width: 769px) {
             .txt-type {
-                font-size: 2rem;
+                font-size: 1.75rem; /* Ajuste para tablets */
             }
 
             .fas {
-                font-size: 1.2rem;
+                font-size: 1.4rem; /* Ajuste para tablets */
             }
         }
 
-        /* For large devices like desktops */
-        @media (min-width: 1024px) {
+        /* Desktop Responsiveness */
+        @media (min-width: 1025px) {
             .txt-type {
-                font-size: 3rem;
+                font-size: 2rem; /* Ajuste para telas maiores */
             }
 
             .fas {
-                font-size: 1.8rem;
+                font-size: 1.5rem; /* Ícone maior para desktop */
             }
         }
-   
     </style>
 </head>
 <body>
