@@ -9,86 +9,96 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
-    <!-- Seu CSS personalizado (opcional) -->
+    <!-- Seu CSS personalizado -->
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fundo preto para um contraste bom */
         }
 
         .portfolio {
-            padding: 50px 0;
-            background-color: #fff;
+            padding: 0; /* Remove o padding para o slider ocupar toda a tela */
+            margin: 0;  /* Remove qualquer margem */
+            position: relative;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
+            color: white;
+            font-size: 3rem;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
         }
 
-        .portfolio-heading h2 {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
-            font-weight: 700;
+        /* Ajustando o tamanho do slider */
+        .gif-slider {
+            width: 100%;
+            height: 100vh; /* 100% da altura da tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .portfolio-item {
-            text-align: center;
-            margin: 10px;
+        .gif-slider .slick-slide {
+            height: 100vh; /* Cada slide ocupará 100% da altura da tela */
         }
 
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .gif-slider img {
+            width: 100%;
+            height: 100vh; /* Faz o GIF ocupar toda a altura da tela */
+            object-fit: cover; /* Faz a imagem cobrir toda a área sem distorcer */
         }
 
-        .portfolio-item .slick-prev, .portfolio-item .slick-next {
-            background-color: #333;
+        /* Estilizando os controles do slider (setas e pontos) */
+        .slick-prev, .slick-next {
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border-radius: 50%;
-            padding: 10px;
+            padding: 15px;
         }
 
         .slick-prev {
-            left: -20px;
+            left: 20px;
         }
 
         .slick-next {
-            right: -20px;
+            right: 20px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .slick-prev:hover, .slick-next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .slick-dots {
+            bottom: 20px;
+        }
+
+        .slick-dots li button:before {
+            color: white;
         }
     </style>
 </head>
 <body>
 
     <!-- ===== Portifolio Section Start =====-->
-    <section class="portfolio section">
-        <div class="center">
-            <div class="container box-especialidades">
-                <div class="row">
-                    <div class="section-title padd-15">
-                        <h2>Portfolio</h2>
-                    </div>
-                </div>
+    <section class="portfolio">
+        <div class="section-title">
+            <h2>Portfolio com GIFs</h2>
+        </div>
 
-                <!-- Slider de GIFs -->
-                <div class="gif-slider">
-                    <div><img src="https://andrewhungblog.wordpress.com/wp-content/uploads/2018/08/matrixrain.gif" alt="GIF 1"></div>
-                    <div><img src="https://media.giphy.com/media/9J7aFzAMRcoZK/giphy.gif" alt="GIF 2"></div>
-                    <div><img src="https://media.giphy.com/media/1BdXk6bz9CPr4/giphy.gif" alt="GIF 3"></div>
-                    <div><img src="https://media.giphy.com/media/8Mv2gxjc00m6k/giphy.gif" alt="GIF 4"></div>
-                    <div><img src="https://media.giphy.com/media/Y1wmknYyl4e8I/giphy.gif" alt="GIF 5"></div>
-                    <div><img src="https://media.giphy.com/media/v2i1RRY0sWxa0/giphy.gif" alt="GIF 6"></div>
-                </div>
-            </div>
+        <!-- Slider de GIFs -->
+        <div class="gif-slider">
+            <div><img src="https://andrewhungblog.wordpress.com/wp-content/uploads/2018/08/matrixrain.gif" alt="GIF 1"></div>
+            <div><img src="https://media.giphy.com/media/9J7aFzAMRcoZK/giphy.gif" alt="GIF 2"></div>
+            <div><img src="https://media.giphy.com/media/1BdXk6bz9CPr4/giphy.gif" alt="GIF 3"></div>
+            <div><img src="https://media.giphy.com/media/8Mv2gxjc00m6k/giphy.gif" alt="GIF 4"></div>
+            <div><img src="https://media.giphy.com/media/Y1wmknYyl4e8I/giphy.gif" alt="GIF 5"></div>
+            <div><img src="https://media.giphy.com/media/v2i1RRY0sWxa0/giphy.gif" alt="GIF 6"></div>
         </div>
     </section>
     <!-- ===== Portfolio Section End =====-->
@@ -115,4 +125,3 @@
 
 </body>
 </html>
-
